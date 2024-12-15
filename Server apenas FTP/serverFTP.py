@@ -8,8 +8,8 @@ from pyftpdlib.servers import FTPServer
 authorizer = DummyAuthorizer()
 
 # Criacao de um novo usuario
-dir_path = os.path.dirname(os.path.realpath(__file__)) + "/dir_vigno"
-authorizer.add_user('vigno', 'tux', dir_path, perm='elradfmwMT')
+dir_path_vigno = os.path.dirname(os.path.realpath(__file__)) + "/dir_vigno"
+authorizer.add_user('vigno', 'tux', dir_path_vigno, perm='elradfmwMT', msg_login="Bem vindo, Vigno", msg_quit="Adeus, Mestre das Redes.")
 
 # Classe que manipula os comandos vindos do cliente
 handler = FTPHandler
@@ -19,14 +19,8 @@ handler.timeout = 1800
 # Aparece quando o cliente conecta
 handler.banner = "Bem vindo ao servidor FTP."
 
-# Apagar depois:
-# Specify a masquerade address and the range of ports to use for
-# passive connections.  Decomment in case you're behind a NAT.
-#handler.masquerade_address = '151.25.42.11'
-#handler.passive_ports = range(60000, 65535)
-
 # Instancia o servidor e define seu endereco
-address = ('', 2121)
+address = ("192.168.1.100", 2121)
 server = FTPServer(address, handler)
 
 # define o limite de conexoes
