@@ -1,4 +1,4 @@
-notas do curso de 2024
+notas do segundo trabalho de redes - imp. de socket de 2024
 
 Tiago 10
 Olimpio 10

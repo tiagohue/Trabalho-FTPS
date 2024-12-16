@@ -20,7 +20,8 @@ handler.timeout = 1800
 handler.banner = "Bem vindo ao servidor FTP da UESPI."
 
 # Instancia o servidor e define seu endereco
-address = ("192.168.1.103", 2121)
+# Altere para o seu endereco
+address = ("192.168.1.104", 2121)
 server = FTPServer(address, handler)
 
 # define o limite de conexoes
