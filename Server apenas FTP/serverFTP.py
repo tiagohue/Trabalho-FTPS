@@ -9,7 +9,7 @@ authorizer = DummyAuthorizer()
 
 # Criacao de um novo usuario
 dir_path_vigno = os.path.dirname(os.path.realpath(__file__)) + "/dir_vigno"
-authorizer.add_user('vigno', 'tux', dir_path_vigno, perm='elradfmwMT', msg_login="Bem vindo, Vigno", msg_quit="Adeus, Mestre das Redes.")
+authorizer.add_user('vigno', 'tux', dir_path_vigno, perm='elradfmwMT', msg_login="Bem vindo, Vigno.", msg_quit="Adeus, Mestre das Redes.")
 
 # Classe que manipula os comandos vindos do cliente
 handler = FTPHandler
@@ -17,10 +17,10 @@ handler.authorizer = authorizer
 handler.timeout = 1800
 
 # Aparece quando o cliente conecta
-handler.banner = "Bem vindo ao servidor FTP."
+handler.banner = "Bem vindo ao servidor FTP da UESPI."
 
 # Instancia o servidor e define seu endereco
-address = ("192.168.1.100", 2121)
+address = ("192.168.1.103", 2121)
 server = FTPServer(address, handler)
 
 # define o limite de conexoes
